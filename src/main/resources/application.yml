@@ -1,14 +1,27 @@
 server:
-  port: 8887
+  port: 8888
 
 spring:
   application:
     name: config-server
-
   cloud:
     config:
       server:
+        encrypt:
+          enabled: false
         git:
-          uri: https://github.com/CREWUP-MSA/config.git
-          username: ${GITHUB_USERNAME}
-          password: ${GITHUB_PASSWORD}
+          default-label: main
+          uri: ${URI}
+          ignore-local-ssh-settings: true
+          passphrase: ${GIT_PASSPHRASE}
+          private-key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDV9jPBcN
+            JYuSYBa7+tdZB4AAAAGAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAII2NLeIXGGR6mHEm
+            Sn7EDoJcl6L937mKsLG1LXzg47NPAAAAoO48K902YI0ZyI/hY2JNeSlP4p2Z9hNFj9H4k7
+            rdB84oKiJ6yd4O1ScgBRG883n8HA8CcHvitUYp9AvujSdzeZSUlXWCSP0QP0YfVhf+SM9F
+            IEA0XGFn02/ZxQClTgxZyOcsa+nB8fYhJS7jPzuRXl9gYXaMuj+Ub9PVC8L53nsooq5RVJ
+            GvdcRqSCnIioHvy/EoUucbShZ/67dJ3xT2Zu0=
+            -----END OPENSSH PRIVATE KEY-----
+          host-key: ${HOST_KEY}
+          host-key-algorithm: ${HOST_ALGORITHM}
