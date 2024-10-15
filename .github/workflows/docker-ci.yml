@@ -25,7 +25,6 @@ jobs:
       - name: Set environment variables from GitHub Secrets
         run: |
             echo "URI=${{ secrets.CONFIG_URI }}" >> $GITHUB_ENV
-            echo "GIT_PRIVATE_KEY=${{ secrets.GIT_PRIVATE_KEY }}" >> $GITHUB_ENV
             echo "GIT_PASSPHRASE=${{ secrets.GIT_PASSPHRASE }}" >> $GITHUB_ENV
             echo "HOST_KEY=${{ secrets.HOST_KEY }}" >> $GITHUB_ENV
             echo "HOST_ALGORITHM=${{ secrets.HOST_ALGORITHM }}" >> $GITHUB_ENV
