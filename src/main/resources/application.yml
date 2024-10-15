@@ -2,10 +2,12 @@ server:
   port: 8888
 
 spring:
+  profiles:
+    active: local
   application:
     name: config-server
   rabbitmq:
-    port: 5462
+    port: ${RABBITMQ_PORT}
     host: ${RABBITMQ_HOST}
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
@@ -32,3 +34,9 @@ spring:
             -----END OPENSSH PRIVATE KEY-----
           host-key: ${HOST_KEY}
           host-key-algorithm: ${HOST_ALGORITHM}
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: bus-refresh, health
