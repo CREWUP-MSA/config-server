@@ -4,7 +4,14 @@ server:
 spring:
   application:
     name: config-server
+  rabbitmq:
+    port: 5462
+    host: ${RABBITMQ_HOST}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
   cloud:
+    bus:
+      enabled: true
     config:
       server:
         encrypt:
