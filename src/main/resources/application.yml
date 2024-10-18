@@ -36,7 +36,7 @@ spring:
           host-key-algorithm: ${HOST_ALGORITHM}
 
 management:
-  endpoint:
+  endpoints:
     web:
       exposure:
         include: bus-refresh, health
