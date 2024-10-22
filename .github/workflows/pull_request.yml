@@ -28,5 +28,8 @@ jobs:
           echo "KAFKA_PORT=${{ secrets.KAFKA_PORT }}" >> $GITHUB_ENV
         shell: bash
 
+      - name: Set permission for gradlew
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew clean build
