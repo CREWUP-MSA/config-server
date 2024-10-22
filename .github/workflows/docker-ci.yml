@@ -28,10 +28,8 @@ jobs:
             echo "GIT_PASSPHRASE=${{ secrets.GIT_PASSPHRASE }}" >> $GITHUB_ENV
             echo "HOST_KEY=${{ secrets.HOST_KEY }}" >> $GITHUB_ENV
             echo "HOST_ALGORITHM=${{ secrets.HOST_ALGORITHM }}" >> $GITHUB_ENV
-            echo "RABBITMQ_HOST=${{ secrets.RABBITMQ_HOST }}" >> $GITHUB_ENV
-            echo "RABBITMQ_PORT=${{ secrets.RABBITMQ_PORT }}" >> $GITHUB_ENV
-            echo "RABBITMQ_USERNAME=${{ secrets.RABBITMQ_USERNAME }}" >> $GITHUB_ENV
-            echo "RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}" >> $GITHUB_ENV
+            echo "KAFKA_HOST=${{ secrets.KAFKA_HOST }}" >> $GITHUB_ENV
+            echo "KAFKA_PORT=${{ secrets.KAFKA_PORT }}" >> $GITHUB_ENV
         shell: bash
 
       - name: Set permission for gradlew
