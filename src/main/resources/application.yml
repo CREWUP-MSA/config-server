@@ -6,13 +6,12 @@ spring:
     active: local
   application:
     name: config-server
-  rabbitmq:
-    port: ${RABBITMQ_PORT}
-    host: ${RABBITMQ_HOST}
-    username: ${RABBITMQ_USERNAME}
-    password: ${RABBITMQ_PASSWORD}
+  kafka:
+    bootstrap-servers: ${KAFKA_HOST}:${KAFKA_PORT}
   cloud:
     bus:
+      enabled: true
+    refresh:
       enabled: true
     config:
       server:
@@ -39,4 +38,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh, health
+        include: bus-refresh
